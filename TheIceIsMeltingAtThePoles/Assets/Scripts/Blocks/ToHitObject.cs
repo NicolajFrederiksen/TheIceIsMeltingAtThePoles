@@ -12,8 +12,10 @@ public class ToHitObject : MonoBehaviour
     }
     public IEnumerator destroyObject(float delay)
     {
+        Destroy(this.gameObject.GetComponent<Rigidbody>());
+        Destroy(this.gameObject.GetComponent<BoxCollider>());
         yield return new WaitForSeconds(delay);
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
 
     }
 

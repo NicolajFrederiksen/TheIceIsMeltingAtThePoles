@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,14 @@ public class CameraMovement : MonoBehaviour
 {
     GameObject mainCharacter;
     Vector3 CameraPosition;
+    public Action McMoved;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCharacter = GameObject.Find("MainCharacter");
         CameraPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-        Invoke("followMC");
+   
     }
 
     // Update is called once per frame

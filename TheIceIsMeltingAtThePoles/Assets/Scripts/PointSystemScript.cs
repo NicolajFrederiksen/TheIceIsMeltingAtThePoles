@@ -40,7 +40,7 @@ public class PointSystemScript : MonoBehaviour
     
     public void GetResult()
     {
-        PlayerPrefs.SetString("points", points.ToString());
+        PlayerPrefs.SetString("points", ((int)points).ToString());
     }
 
 

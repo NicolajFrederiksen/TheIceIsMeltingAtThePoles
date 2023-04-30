@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCharacter : MonoBehaviour
 {
@@ -8,12 +9,13 @@ public class MainCharacter : MonoBehaviour
     GameObject newRope;
     GameObject Camera;
     GameObject water;
-    // nico
+    PointSystemScript points;
     public void Start()
     {
         newRope = Instantiate(ropePrefab, transform);
         Camera = GameObject.FindGameObjectWithTag("MainCamera");
         water = GameObject.Find("Water");
+        points = GameObject.Find("PointImage").GetComponent<PointSystemScript>();
     }
     // this
     public GameObject ropePrefab;
@@ -67,7 +69,8 @@ public class MainCharacter : MonoBehaviour
     }
     public void Death()
     {
-        // nico
+        points.GetResult();
         Destroy(this.gameObject);
+        SceneManager.LoadScene("EndScene");
     }
 }

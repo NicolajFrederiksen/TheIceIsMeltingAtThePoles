@@ -13,7 +13,13 @@ public class MenuHandler : MonoBehaviour
    
     public TMP_Text points;
 
-   
+    public void Start()
+    {
+        if (points != null)
+        {
+            setPoints();
+        }
+    }
 
 
     public void PlayGame()

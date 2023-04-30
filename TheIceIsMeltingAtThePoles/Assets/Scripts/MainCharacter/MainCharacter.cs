@@ -22,7 +22,7 @@ public class MainCharacter : MonoBehaviour
         float TransitionStartTime = Time.time;
         StartCoroutine(MoveParentObject(Targetposition, TransitionStartTime));
         Camera.GetComponent<CameraMovement>().followMC(Targetposition, TransitionStartTime, transitionDuration);
-        water.GetComponent<Water>().setTimer();
+       // water.GetComponent<Water>().setTimer();
 
     }
 

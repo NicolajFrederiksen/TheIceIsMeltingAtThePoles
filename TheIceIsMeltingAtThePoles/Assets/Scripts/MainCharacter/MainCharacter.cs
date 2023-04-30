@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
-    public float transitionDuration;
+    public float OffsetY,transitionDuration;
     GameObject newRope;
     public void Start()
     {
@@ -20,18 +20,6 @@ public class MainCharacter : MonoBehaviour
 
     }
 
-    public class PlayerCollision : MonoBehaviour
-    {
-        public Water movement;
-        void OnCollisionEnter(Collision collision)
-        {
-
-            if (collision.collider.tag == "MainCharacter")
-            {
-                movement.enabled = false;
-            }
-        }
-    }
 
     IEnumerator MoveParentObject(Vector3 targetPosition, float transitionStartTime)
     {
@@ -50,7 +38,7 @@ public class MainCharacter : MonoBehaviour
             // Calculate the new position of the parent object using SmoothStep
             Vector3 newPosition = new Vector3(
                 Mathf.SmoothStep(startPosition.x, targetPosition.x, t),
-                Mathf.SmoothStep(startPosition.y, targetPosition.y, t),
+                Mathf.SmoothStep(startPosition.y, targetPosition.y+OffsetY, t),
                 Mathf.SmoothStep(startPosition.z, targetPosition.z, t)
             );
 
@@ -66,7 +54,7 @@ public class MainCharacter : MonoBehaviour
         }
 
         // Set the final position of the parent object to ensure accuracy
-        transform.position = targetPosition;
+        transform.position = new Vector3(targetPosition.x, targetPosition.y + OffsetY, targetPosition.z);
         // this
         newRope = Instantiate(ropePrefab, transform);
     }

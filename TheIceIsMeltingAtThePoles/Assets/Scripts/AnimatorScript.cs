@@ -27,6 +27,10 @@ public class AnimatorScript : MonoBehaviour
     {
         C_Animator.SetTrigger("Landed");
     }
+    public void AtPlatform()
+    {
+        C_Animator.SetTrigger("toPlatform");
+    }
 
     public void Winning()
     {

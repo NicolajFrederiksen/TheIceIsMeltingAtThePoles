@@ -154,7 +154,6 @@ public class Rope : MonoBehaviour
             collision.gameObject.GetComponent<ToHitObject>().destroyIt(DestroyTimeDelay);
             Vector3 TargetPosition = collision.gameObject.transform.position;
             ParentMainCharacter.MovingToObject(TargetPosition);
-
         }
         else if (collision.gameObject.CompareTag("ObjectY"))
         {

@@ -31,7 +31,7 @@ public class Water : MonoBehaviour
         }
         if(collision.collider.tag == "Rope")
         {
-            collision.gameObject.GetComponent<Rope>().NoRigid();
+          
         }
     }
 }

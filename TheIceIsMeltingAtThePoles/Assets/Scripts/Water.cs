@@ -5,11 +5,11 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     public bool movement = true;
-    public gameManager GameManager;
+    public float moveSpeed = 1.0f;
+    public Vector3 moveVector;
     void Start()
     {
-        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
-        GameManager = gameController.GetComponent<gameManager>();
+        moveVector = new Vector3(0, 1, 0);
     }
 
 
@@ -17,7 +17,7 @@ public class Water : MonoBehaviour
     {
         if (movement)
         {
-            transform.Translate(GameManager.moveVector * GameManager.moveSpeed * Time.deltaTime);
+            transform.Translate(moveVector * moveSpeed * Time.deltaTime);
         }
     }
 
@@ -28,7 +28,10 @@ public class Water : MonoBehaviour
         {
             movement= false;
             Destroy(collision.gameObject);
-            Destroy(collision.gameObject);
+        }
+        if(collision.collider.tag == "Rope")
+        {
+            collision.gameObject.GetComponent<Rope>().NoRigid();
         }
     }
 }

@@ -164,5 +164,6 @@ public class Rope : MonoBehaviour
     public void NoRigid()
     {
         this.GetComponent<Collider>().isTrigger = true;
+       // this.GetComponent<Rigidbody>().
     }
 }

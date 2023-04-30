@@ -20,6 +20,19 @@ public class MainCharacter : MonoBehaviour
 
     }
 
+    public class PlayerCollision : MonoBehaviour
+    {
+        public Water movement;
+        void OnCollisionEnter(Collision collision)
+        {
+
+            if (collision.collider.tag == "MainCharacter")
+            {
+                movement.enabled = false;
+            }
+        }
+    }
+
     IEnumerator MoveParentObject(Vector3 targetPosition, float transitionStartTime)
     {
         // Get the initial position of the parent object

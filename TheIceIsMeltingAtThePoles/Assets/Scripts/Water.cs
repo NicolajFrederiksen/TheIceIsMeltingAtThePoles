@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    gameManager GameManager;
+    public bool movement = true;
+    public gameManager GameManager;
     void Start()
     {
         GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
@@ -14,7 +15,20 @@ public class Water : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(GameManager.moveVector * GameManager.moveSpeed * Time.deltaTime);
+        if (movement)
+        {
+            transform.Translate(GameManager.moveVector * GameManager.moveSpeed * Time.deltaTime);
+        }
+    }
 
+    void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.collider.tag == "MainCharacter")
+        {
+            movement= false;
+            Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
+        }
     }
 }

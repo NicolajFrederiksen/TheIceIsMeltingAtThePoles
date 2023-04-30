@@ -45,7 +45,7 @@ public class MainCharacter : MonoBehaviour
             Vector3 newPosition = new Vector3(
                 Mathf.SmoothStep(startPosition.x, targetPosition.x, t),
                 Mathf.SmoothStep(startPosition.y, targetPosition.y + OffsetY, t),
-                Mathf.SmoothStep(startPosition.z, targetPosition.z - OffSetZ, t)
+                Mathf.SmoothStep(startPosition.z, targetPosition.z + OffSetZ, t)
             );
 
             // Set the position of the parent object
@@ -60,7 +60,7 @@ public class MainCharacter : MonoBehaviour
         }
 
         // Set the final position of the parent object to ensure accuracy
-        transform.position = new Vector3(targetPosition.x, targetPosition.y + OffsetY, targetPosition.z-OffSetZ);
+        transform.position = new Vector3(targetPosition.x, targetPosition.y + OffsetY, targetPosition.z + OffSetZ);
         // this
         newRope = Instantiate(ropePrefab, transform);
     }

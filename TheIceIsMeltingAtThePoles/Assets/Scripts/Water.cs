@@ -30,7 +30,7 @@ public class Water : MonoBehaviour
         if (collision.collider.tag == "MainCharacter")
         {
             movement = false;
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponentInParent<MainCharacter>().Death();
         }
         if(collision.collider.tag == "Rope")
         {

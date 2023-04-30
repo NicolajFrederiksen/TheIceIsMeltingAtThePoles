@@ -8,6 +8,7 @@ public class MainCharacter : MonoBehaviour
     GameObject newRope;
     GameObject Camera;
     GameObject water;
+    // nico
     public void Start()
     {
         newRope = Instantiate(ropePrefab, transform);
@@ -64,5 +65,9 @@ public class MainCharacter : MonoBehaviour
         // this
         newRope = Instantiate(ropePrefab, transform);
     }
-
+    public void Death()
+    {
+        // nico
+        Destroy(this.gameObject);
+    }
 }

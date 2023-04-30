@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PointSystemScript : MonoBehaviour
 {
@@ -37,9 +38,9 @@ public class PointSystemScript : MonoBehaviour
         pointText.text = ((int)points).ToString();
     }
     
-    public float GetResult()
+    public void GetResult()
     {
-        return points;
+        PlayerPrefs.SetString("points", points.ToString());
     }
 
 

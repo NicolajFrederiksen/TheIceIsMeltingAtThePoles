@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 7304868668482448986}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7127687638135998141
 MonoBehaviour:
@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaybeCharacter@Joyful Jump
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: e1fe53c462a608c4d94524ec26374708,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 152012dbb201f594f89178a2b8097887, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

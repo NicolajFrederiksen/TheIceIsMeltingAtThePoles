@@ -29,7 +29,7 @@ public class MainCharacter : MonoBehaviour
 
         // Calculate the interpolation factor based on the elapsed time and duration
         float t = Mathf.Clamp01(elapsedTransitionTime / transitionDuration);
-        
+
         Destroy(newRope);
         // Gradually move the parent object towards the target position
         while (t < 1.0f)

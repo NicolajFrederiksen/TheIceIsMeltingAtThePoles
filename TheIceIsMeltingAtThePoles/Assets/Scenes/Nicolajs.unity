@@ -1240,6 +1240,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointsImage
       objectReference: {fileID: 0}
+    - target: {fileID: 358261386226948123, guid: 21f0e84c55843b94d8747551bf4ca260,
+        type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 358261386544900173, guid: 21f0e84c55843b94d8747551bf4ca260,
         type: 3}
       propertyPath: m_Name

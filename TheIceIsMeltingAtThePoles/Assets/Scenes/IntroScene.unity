@@ -386,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0005187988, y: 0}
+  m_AnchoredPosition: {x: -0.00048828125, y: 0}
   m_SizeDelta: {x: 0, y: -0.019989014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &327107649
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ef0d4132485e2640acaa6db52d57ebc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8fbc224366027c47926adabe82b4bfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d0d5df7994ff744870427d7b481bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundOffImage: {fileID: 21300000, guid: 00f19af3d9325dd47b68afda9ee62c53, type: 3}
+  soundOffImage: {fileID: 21300000, guid: b59b57e213c5d024da04b7859e314fc3, type: 3}
   button: {fileID: 981638282}
   audioSource: {fileID: 710114950}
 --- !u!222 &981638285

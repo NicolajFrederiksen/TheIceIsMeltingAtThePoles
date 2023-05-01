@@ -7,6 +7,7 @@ public class MainCharacter : MonoBehaviour
 {
     public float OffsetY, OffSetZ, transitionDuration;
     GameObject newRope;
+    public GameObject ropePrefab;
     GameObject Camera;
     GameObject water;
     PointSystemScript points;
@@ -18,7 +19,6 @@ public class MainCharacter : MonoBehaviour
         points = GameObject.Find("PointImage").GetComponent<PointSystemScript>();
     }
     // this
-    public GameObject ropePrefab;
 
     public void MovingToObject(Vector3 Targetposition)
     {

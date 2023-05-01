@@ -5,13 +5,11 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     public bool movement = true;
-    public float moveSpeed = 1.0f;
-    public Vector3 moveVector;
+    public float speed = 1.0f;
     public GameObject Player;
     //[SerializeField] private AudioSource DeathSound;
     void Start()
     {
-        moveVector = new Vector3(0, 1, 0);
         Player = GameObject.FindGameObjectWithTag("MainCharacter");
     }
 
@@ -20,8 +18,10 @@ public class Water : MonoBehaviour
     {
         if (movement)
         {
-          
-            transform.Translate(moveVector * moveSpeed * Time.deltaTime);
+            float distance = Player.transform.position.y - transform.position.y;
+            float newSpeed = Mathf.Lerp(0, speed, distance / 10f);
+            transform.Translate(Vector3.up * newSpeed * Time.deltaTime);
+           
         }
     }
 

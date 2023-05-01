@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCharacter : MonoBehaviour
 {
-    public float OffsetY,transitionDuration;
+    public float OffsetY, OffSetZ, transitionDuration;
     GameObject newRope;
+    GameObject Camera;
+    GameObject water;
+    PointSystemScript points;
     public void Start()
     {
         newRope = Instantiate(ropePrefab, transform);
+        Camera = GameObject.FindGameObjectWithTag("MainCamera");
+        water = GameObject.Find("Water");
+        points = GameObject.Find("PointImage").GetComponent<PointSystemScript>();
     }
     // this
     public GameObject ropePrefab;
@@ -17,6 +24,8 @@ public class MainCharacter : MonoBehaviour
     {
         float TransitionStartTime = Time.time;
         StartCoroutine(MoveParentObject(Targetposition, TransitionStartTime));
+        Camera.GetComponent<CameraMovement>().followMC(Targetposition, TransitionStartTime, transitionDuration);
+       // water.GetComponent<Water>().setTimer();
 
     }
 
@@ -38,8 +47,8 @@ public class MainCharacter : MonoBehaviour
             // Calculate the new position of the parent object using SmoothStep
             Vector3 newPosition = new Vector3(
                 Mathf.SmoothStep(startPosition.x, targetPosition.x, t),
-                Mathf.SmoothStep(startPosition.y, targetPosition.y+OffsetY, t),
-                Mathf.SmoothStep(startPosition.z, targetPosition.z, t)
+                Mathf.SmoothStep(startPosition.y, targetPosition.y + OffsetY, t),
+                Mathf.SmoothStep(startPosition.z, targetPosition.z + OffSetZ, t)
             );
 
             // Set the position of the parent object
@@ -54,9 +63,14 @@ public class MainCharacter : MonoBehaviour
         }
 
         // Set the final position of the parent object to ensure accuracy
-        transform.position = new Vector3(targetPosition.x, targetPosition.y + OffsetY, targetPosition.z);
+        transform.position = new Vector3(targetPosition.x, targetPosition.y + OffsetY, targetPosition.z + OffSetZ);
         // this
         newRope = Instantiate(ropePrefab, transform);
     }
-
+    public void Death()
+    {
+        points.GetResult();
+        Destroy(this.gameObject);
+        SceneManager.LoadScene("EndScene");
+    }
 }

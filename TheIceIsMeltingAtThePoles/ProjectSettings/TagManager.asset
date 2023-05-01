@@ -7,6 +7,7 @@ TagManager:
   - ToHit
   - Rope
   - MainCharacter
+  - NotToHit
   layers:
   - Default
   - TransparentFX

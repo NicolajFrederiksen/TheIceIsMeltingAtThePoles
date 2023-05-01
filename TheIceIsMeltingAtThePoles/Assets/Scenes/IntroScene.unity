@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: bda360538beb4f34199e2ae652d7ea8f,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -222,7 +223,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1082871573}
+    m_TransformParent: {fileID: 1842420933}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
@@ -232,32 +233,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7000003
+      value: 1.7593794
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7
+      value: 1.7593793
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.7000003
+      value: 1.7593794
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -85.32979
+      value: -361.14456
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -64.48465
+      value: -225.92253
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 120.80798
+      value: 114.67838
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1fe53c462a608c4d94524ec26374708,
         type: 3}
@@ -329,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &217838013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -346,10 +347,10 @@ RectTransform:
   m_Father: {fileID: 1434166409}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.0005187988, y: 0}
+  m_SizeDelta: {x: 0, y: -0.019989014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &327107649
 GameObject:
@@ -971,10 +972,10 @@ RectTransform:
   m_Father: {fileID: 217838013}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -606}
-  m_SizeDelta: {x: 1029.6897, y: 193.0668}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 126, y: 395}
+  m_SizeDelta: {x: 223.7996, y: 88.1657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770590139
 MonoBehaviour:
@@ -1196,8 +1197,7 @@ Transform:
   m_LocalPosition: {x: 122.87293, y: 63.58465, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 506183705}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1464,11 +1464,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 47.9
   m_fontSizeBase: 73.03
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 23.185898, y: 25.9682, z: 27.823067, w: 20.403587}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1741,6 +1741,7 @@ MonoBehaviour:
   GameScene: GameScene
   StartScene: {fileID: 1842420932}
   HelpScene: {fileID: 217838012}
+  points: {fileID: 0}
 --- !u!1 &1582238833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,7 +2161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1842420933
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2173,6 +2174,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 506183705}
   - {fileID: 768357401}
   - {fileID: 1809356308}
   m_Father: {fileID: 1434166409}

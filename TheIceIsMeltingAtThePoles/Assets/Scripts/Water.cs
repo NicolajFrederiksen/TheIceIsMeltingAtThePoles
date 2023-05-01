@@ -7,9 +7,11 @@ public class Water : MonoBehaviour
     public bool movement = true;
     public float moveSpeed = 1.0f;
     public Vector3 moveVector;
+    public GameObject Player;
     void Start()
     {
         moveVector = new Vector3(0, 1, 0);
+        Player = GameObject.FindGameObjectWithTag("MainCharacter");
     }
 
 
@@ -17,6 +19,7 @@ public class Water : MonoBehaviour
     {
         if (movement)
         {
+          
             transform.Translate(moveVector * moveSpeed * Time.deltaTime);
         }
     }
@@ -26,12 +29,12 @@ public class Water : MonoBehaviour
 
         if (collision.collider.tag == "MainCharacter")
         {
-            movement= false;
-            Destroy(collision.gameObject);
+            movement = false;
+            collision.gameObject.GetComponent<MainCharacter>().Death();
         }
         if(collision.collider.tag == "Rope")
         {
-          
+            return;
         }
     }
 }

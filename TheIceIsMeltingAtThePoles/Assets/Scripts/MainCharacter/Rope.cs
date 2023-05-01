@@ -154,16 +154,32 @@ public class Rope : MonoBehaviour
             collision.gameObject.GetComponent<ToHitObject>().destroyIt(DestroyTimeDelay);
             Vector3 TargetPosition = collision.gameObject.transform.position;
             ParentMainCharacter.MovingToObject(TargetPosition);
-
         }
-        else if (collision.gameObject.CompareTag("ObjectY"))
+        else if (collision.gameObject.CompareTag("NotToHit"))
         {
-
+            NoRigid();
+            StartCoroutine(HitWrongTarget(collision.gameObject.GetComponent<NotToHitObject>().DelayTime));
+            collision.gameObject.GetComponent<NotToHitObject>().HitWrong();
         }
+    }
+
+    public IEnumerator HitWrongTarget(float TimeDelay)
+    {
+        RopeThrown = false;
+        yield return new WaitForSeconds(TimeDelay);
+        RopeThrown = true;
+        Throwing = false;
+        Retract = true;
+        Rigid();
+
+
     }
     public void NoRigid()
     {
         this.GetComponent<Collider>().isTrigger = true;
-       // this.GetComponent<Rigidbody>().
+    }
+    public void Rigid()
+    {
+        this.GetComponent<Collider>().isTrigger = false;
     }
 }

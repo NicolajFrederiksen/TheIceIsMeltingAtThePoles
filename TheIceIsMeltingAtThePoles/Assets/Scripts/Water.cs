@@ -19,7 +19,7 @@ public class Water : MonoBehaviour
         if (movement)
         {
             float distance = Player.transform.position.y - transform.position.y;
-            float newSpeed = Mathf.Lerp(0, speed, distance / 10f);
+            float newSpeed = Mathf.Lerp(0.2f, speed, distance / 10f);
             transform.Translate(Vector3.up * newSpeed * Time.deltaTime);
            
         }

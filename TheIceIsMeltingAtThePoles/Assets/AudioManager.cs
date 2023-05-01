@@ -12,9 +12,8 @@ public class AudioManager : MonoBehaviour
 	public Sound[] sounds;
 
 
-    void Awake()
+	void Awake()
 	{
-		OnOrOff =PlayerPrefs.GetInt("OnOrOff");
 
 		if (instance != null)
 		{
@@ -38,7 +37,8 @@ public class AudioManager : MonoBehaviour
 	}
 	void Start()
 	{
-		Play("MainMusic");
+		OnOrOff = PlayerPrefs.GetInt("OnOrOff");
+		Play("MainMusic");		
 	}
 
 	public void Play(string sound)

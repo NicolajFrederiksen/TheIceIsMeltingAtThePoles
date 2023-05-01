@@ -8,7 +8,7 @@ public class Rope : MonoBehaviour
     public float MaxDegreesRotationAroundMC = 0.55f;
     public float scaleSpeed, maxMovement, MaxYScale, MinScale, DestroyTimeDelay;
     private Vector3 objectAngles;
-    private bool Retract, Throwing, RopeThrown, positive = true;
+    private bool Retract, Throwing, RopeThrown, hittedObject, positive = true;
     private float currentScaleY, currentPositionY;
     MainCharacter ParentMainCharacter;
 
@@ -35,14 +35,14 @@ public class Rope : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !hittedObject)
         {
             FindObjectOfType<AudioManager>().Play("Throw");
             Throwing = true;
             Retract = false;
             RopeThrown = true;
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !hittedObject)
         {
             Throwing = false;
             Retract = true;
@@ -88,6 +88,7 @@ public class Rope : MonoBehaviour
         if (transform.localScale.y <= MinScale)
         {
             Retract = false;
+            hittedObject = false;
         }
 
         if (Retract)
@@ -113,7 +114,7 @@ public class Rope : MonoBehaviour
             TargetPositionYD = Mathf.Clamp(TargetPositionYD, currentPositionY - maxMovement, currentPositionY);
             transform.position = new Vector3(transform.position.x, TargetPositionYD, transform.position.z);
         }
-        if (Throwing)
+        if (Throwing && !hittedObject)
         {
             {   
                 // Increase the scale of the object in the Y direction
@@ -164,6 +165,7 @@ public class Rope : MonoBehaviour
             StartCoroutine(HitWrongTarget(collision.gameObject.GetComponent<NotToHitObject>().DelayTime));
             FindObjectOfType<AudioManager>().Play("HitStone");
             collision.gameObject.GetComponent<NotToHitObject>().HitWrong();
+            hittedObject = true;
         }
     }
 

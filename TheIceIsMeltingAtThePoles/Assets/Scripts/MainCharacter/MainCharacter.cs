@@ -11,7 +11,8 @@ public class MainCharacter : MonoBehaviour
     GameObject Camera;
     GameObject water;
     PointSystemScript points;
-
+    public AnimatorScript Anim;
+    private bool won;
 
     public void Start()
     {
@@ -24,10 +25,11 @@ public class MainCharacter : MonoBehaviour
 
     public void MovingToObject(Vector3 Targetposition)
     {
+        Anim.RopeClimb();
         float TransitionStartTime = Time.time;
         StartCoroutine(MoveParentObject(Targetposition, TransitionStartTime));
         Camera.GetComponent<CameraMovement>().followMC(Targetposition, TransitionStartTime, transitionDuration);
-       // water.GetComponent<Water>().setTimer();
+        // water.GetComponent<Water>().setTimer();
 
     }
 
@@ -65,15 +67,39 @@ public class MainCharacter : MonoBehaviour
         }
 
         FindObjectOfType<AudioManager>().Play("SnowWalk");
-        // Set the final position of the parent object to ensure accuracy
+        if(!won)
+        {
+            Anim.LandedPlatform();
+        }
+            // Set the final position of the parent object to ensure accuracy
         transform.position = new Vector3(targetPosition.x, targetPosition.y + OffsetY, targetPosition.z + OffSetZ);
         // this
         newRope = Instantiate(ropePrefab, transform);
     }
     public void Death()
     {
+        Anim.CharacterDead();
         points.GetResult();
+
+        StartCoroutine(death());
+    }
+    IEnumerator death()
+    {
+        yield return new WaitForSeconds(2);
         Destroy(this.gameObject);
         SceneManager.LoadScene("EndScene");
+    }
+    public void Winning()
+    {
+        won = true;
+        Anim.Winning();
+        StartCoroutine(WinningIe());
+    }
+
+    IEnumerator WinningIe()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("EndScene");
+        won = false;
     }
 }

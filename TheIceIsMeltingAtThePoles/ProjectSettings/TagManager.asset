@@ -9,6 +9,7 @@ TagManager:
   - MainCharacter
   - NotToHit
   - Water
+  - WinningBlock
   layers:
   - Default
   - TransparentFX

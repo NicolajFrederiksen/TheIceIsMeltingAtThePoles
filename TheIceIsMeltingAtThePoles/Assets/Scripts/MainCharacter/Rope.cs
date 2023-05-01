@@ -159,6 +159,15 @@ public class Rope : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("HitSnow");
             ParentMainCharacter.MovingToObject(TargetPosition);
         }
+        if (collision.gameObject.CompareTag("WinningBlock"))
+        {
+            NoRigid();
+            collision.gameObject.GetComponent<ToHitObject>().destroyIt(DestroyTimeDelay);
+            Vector3 TargetPosition = collision.gameObject.transform.position;
+            FindObjectOfType<AudioManager>().Play("HitSnow");
+            ParentMainCharacter.MovingToObject(TargetPosition);
+            ParentMainCharacter.Winning();
+        }
         else if (collision.gameObject.CompareTag("NotToHit"))
         {
             NoRigid();

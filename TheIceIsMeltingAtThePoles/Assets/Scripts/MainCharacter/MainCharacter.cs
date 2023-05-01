@@ -93,6 +93,7 @@ public class MainCharacter : MonoBehaviour
     {
         won = true;
         Anim.Winning();
+        points.GetResult();
         StartCoroutine(WinningIe());
     }
 

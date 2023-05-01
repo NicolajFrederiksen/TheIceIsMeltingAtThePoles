@@ -8,7 +8,7 @@ public class PointSystemScript : MonoBehaviour
 {
     public TMP_Text pointText;
     private float points = 0;
-    public float pointsManipulator = 1.0f;
+    public float pointsManipulator = 10.0f;
     public GameObject character;
 
     private Vector3 previousPosition;

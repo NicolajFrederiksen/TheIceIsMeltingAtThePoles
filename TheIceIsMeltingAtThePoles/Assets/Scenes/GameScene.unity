@@ -1347,7 +1347,7 @@ PrefabInstance:
     - target: {fileID: 4881950268733339778, guid: b7197a89965a21243b922e773b506680,
         type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4881950268733339778, guid: b7197a89965a21243b922e773b506680,
         type: 3}
@@ -10864,7 +10864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointText: {fileID: 736268059}
-  pointsManipulator: 1
+  pointsManipulator: 10
   character: {fileID: 1942427660}
 --- !u!1001 &741655872
 PrefabInstance:

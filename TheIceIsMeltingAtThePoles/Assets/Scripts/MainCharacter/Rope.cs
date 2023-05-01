@@ -27,6 +27,7 @@ public class Rope : MonoBehaviour
         if (RopeThrown)
         {
             ThrowRope();
+           
         }
         if (!Throwing && !Retract)
         {

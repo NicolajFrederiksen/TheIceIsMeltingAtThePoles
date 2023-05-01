@@ -8,13 +8,24 @@ public class ChangeSound : MonoBehaviour
     private Sprite soundOnImage;
     public Sprite soundOffImage;
     public Button button;
+    private int OnOrOff;
     private bool isOn = true;
 
     public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        if (isOn)
+        {
+            OnOrOff = 1;
+        }
+        if (!isOn)
+        {
+                OnOrOff = 0;          
+        }
         soundOnImage = button.image.sprite;
+        PlayerPrefs.SetInt("OnOrOff", OnOrOff);
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,13 +40,16 @@ public class ChangeSound : MonoBehaviour
         {
             button.image.sprite = soundOffImage;
             isOn = false;
+            OnOrOff = 0;
             audioSource.mute = true;
         }
         else {
             button.image.sprite = soundOnImage;
             isOn = true;
             audioSource.mute = false;
-        
+            OnOrOff = 1;
+
         }
+        PlayerPrefs.SetInt("OnOrOff", OnOrOff);
     }
 }

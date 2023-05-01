@@ -36,6 +36,7 @@ public class Rope : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            FindObjectOfType<AudioManager>().Play("Throw");
             Throwing = true;
             Retract = false;
             RopeThrown = true;

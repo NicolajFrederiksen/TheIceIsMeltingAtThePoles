@@ -113,7 +113,7 @@ public class Rope : MonoBehaviour
         }
         if (Throwing)
         {
-            {   print("something");
+            {   
                 // Increase the scale of the object in the Y direction
                 float newScaleY = currentScaleY + (scaleSpeed * Time.deltaTime);
 
@@ -153,12 +153,14 @@ public class Rope : MonoBehaviour
             NoRigid();
             collision.gameObject.GetComponent<ToHitObject>().destroyIt(DestroyTimeDelay);
             Vector3 TargetPosition = collision.gameObject.transform.position;
+            FindObjectOfType<AudioManager>().Play("HitSnow");
             ParentMainCharacter.MovingToObject(TargetPosition);
         }
         else if (collision.gameObject.CompareTag("NotToHit"))
         {
             NoRigid();
             StartCoroutine(HitWrongTarget(collision.gameObject.GetComponent<NotToHitObject>().DelayTime));
+            FindObjectOfType<AudioManager>().Play("HitStone");
             collision.gameObject.GetComponent<NotToHitObject>().HitWrong();
         }
     }

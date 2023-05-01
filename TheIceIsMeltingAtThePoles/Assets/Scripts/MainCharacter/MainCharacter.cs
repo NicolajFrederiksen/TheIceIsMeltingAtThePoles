@@ -62,6 +62,7 @@ public class MainCharacter : MonoBehaviour
             yield return null;
         }
 
+        FindObjectOfType<AudioManager>().Play("SnowWalk");
         // Set the final position of the parent object to ensure accuracy
         transform.position = new Vector3(targetPosition.x, targetPosition.y + OffsetY, targetPosition.z + OffSetZ);
         // this

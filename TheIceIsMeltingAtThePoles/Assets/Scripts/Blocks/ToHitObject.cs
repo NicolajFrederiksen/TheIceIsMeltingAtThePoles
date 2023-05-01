@@ -18,5 +18,19 @@ public class ToHitObject : MonoBehaviour
         //Destroy(this.gameObject);
 
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            NoRigid();
+        }
+    }
+    public void NoRigid()
+    {
+        this.GetComponent<Collider>().isTrigger = true;
+    }
+    public void Rigid()
+    {
+        this.GetComponent<Collider>().isTrigger = false;
+    }
 }

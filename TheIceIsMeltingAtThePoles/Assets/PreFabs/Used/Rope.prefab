@@ -128,6 +128,8 @@ MonoBehaviour:
   MaxYScale: 8
   MinScale: 0.33
   DestroyTimeDelay: 0.5
+  ArrowHeadPrefab: {fileID: 2812433502037199275, guid: 2f407038b63b3fc44af932b3d2a57ef4,
+    type: 3}
 --- !u!54 &7167355696818264946
 Rigidbody:
   m_ObjectHideFlags: 0

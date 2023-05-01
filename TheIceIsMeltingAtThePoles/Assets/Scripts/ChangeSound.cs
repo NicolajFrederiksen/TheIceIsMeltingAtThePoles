@@ -14,7 +14,8 @@ public class ChangeSound : MonoBehaviour
     public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
-    {       
+    {
+        print(OnOrOff = PlayerPrefs.GetInt("OnOrOff"));
         if (isOn)
         {
             OnOrOff = 1;

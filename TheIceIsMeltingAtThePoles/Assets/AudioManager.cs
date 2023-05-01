@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
 
 	void Awake()
 	{
-
+		print(OnOrOff = PlayerPrefs.GetInt("OnOrOff"));
 		if (instance != null)
 		{
 			Destroy(gameObject);
@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
 	}
 	void Start()
 	{
-		OnOrOff = PlayerPrefs.GetInt("OnOrOff");
+		print(OnOrOff = PlayerPrefs.GetInt("OnOrOff"));
 		Play("MainMusic");		
 	}
 

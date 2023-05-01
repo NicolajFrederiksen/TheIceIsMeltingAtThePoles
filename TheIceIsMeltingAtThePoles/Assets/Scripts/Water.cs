@@ -8,6 +8,7 @@ public class Water : MonoBehaviour
     public float moveSpeed = 1.0f;
     public Vector3 moveVector;
     public GameObject Player;
+    [SerializeField] private AudioSource DeathSound;
     void Start()
     {
         moveVector = new Vector3(0, 1, 0);
@@ -29,6 +30,7 @@ public class Water : MonoBehaviour
 
         if (collision.collider.tag == "MainCharacter")
         {
+           // DeathSound.Play();
             movement = false;
             collision.gameObject.GetComponent<MainCharacter>().Death();
         }

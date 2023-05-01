@@ -113,7 +113,7 @@ public class Rope : MonoBehaviour
         }
         if (Throwing)
         {
-            {
+            {   print("something");
                 // Increase the scale of the object in the Y direction
                 float newScaleY = currentScaleY + (scaleSpeed * Time.deltaTime);
 

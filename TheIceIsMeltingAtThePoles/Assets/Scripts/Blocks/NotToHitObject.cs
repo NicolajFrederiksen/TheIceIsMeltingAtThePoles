@@ -23,7 +23,20 @@ public class NotToHitObject : MonoBehaviour
         ThisObject.GetComponent<Rigidbody>().Sleep();
         yield return new WaitForSeconds(delay);
         ThisObject.GetComponent<Rigidbody>().WakeUp();
-
-
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            NoRigid();
+        }
+    }
+    public void NoRigid()
+    {
+        this.GetComponent<Collider>().isTrigger = true;
+    }
+    public void Rigid()
+    {
+        this.GetComponent<Collider>().isTrigger = false;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Rope
   - MainCharacter
   - NotToHit
+  - Water
   layers:
   - Default
   - TransparentFX

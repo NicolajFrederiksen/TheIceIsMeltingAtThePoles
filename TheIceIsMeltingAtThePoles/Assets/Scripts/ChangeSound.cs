@@ -25,7 +25,6 @@ public class ChangeSound : MonoBehaviour
         }
         soundOnImage = button.image.sprite;
         PlayerPrefs.SetInt("OnOrOff", OnOrOff);
-        PlayerPrefs.Save();
         //audioSource = GetComponent<AudioSource>();
     }
 
@@ -33,7 +32,6 @@ public class ChangeSound : MonoBehaviour
     void Update()
     {
         PlayerPrefs.SetInt("OnOrOff", OnOrOff);
-        PlayerPrefs.Save();
     }
 
     public void ButtonClicked()

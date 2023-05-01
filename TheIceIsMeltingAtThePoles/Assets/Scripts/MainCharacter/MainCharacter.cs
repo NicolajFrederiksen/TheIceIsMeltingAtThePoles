@@ -11,6 +11,8 @@ public class MainCharacter : MonoBehaviour
     GameObject Camera;
     GameObject water;
     PointSystemScript points;
+
+
     public void Start()
     {
         newRope = Instantiate(ropePrefab, transform);

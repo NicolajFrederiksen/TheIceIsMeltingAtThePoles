@@ -11,9 +11,6 @@ public class Rope : MonoBehaviour
     private bool Retract, Throwing, RopeThrown, positive = true;
     private float currentScaleY, currentPositionY;
     MainCharacter ParentMainCharacter;
-    GameObject Arrowhead;
-    public GameObject ArrowHeadPrefab;
-    Transform thistransform;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +19,6 @@ public class Rope : MonoBehaviour
         ParentMainCharacter = GetComponentInParent<MainCharacter>();
         currentScaleY = transform.localScale.y;
         currentPositionY = transform.position.y;
-        Arrowhead = Instantiate(ArrowHeadPrefab, transform);
-        Arrowhead.transform.parent = transform;
     }
 
     // Update is called once per frame

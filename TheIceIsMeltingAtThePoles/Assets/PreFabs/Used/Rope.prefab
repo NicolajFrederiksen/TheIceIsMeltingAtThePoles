@@ -121,15 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a0f5c075a14aa4fa946827cec6e1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 40
+  degreesPerSecond: 100
   MaxDegreesRotationAroundMC: 0.65
-  scaleSpeed: 3
+  scaleSpeed: 8
   maxMovement: 8
   MaxYScale: 8
   MinScale: 0.33
   DestroyTimeDelay: 0.5
-  ArrowHeadPrefab: {fileID: 2812433502037199275, guid: 2f407038b63b3fc44af932b3d2a57ef4,
-    type: 3}
 --- !u!54 &7167355696818264946
 Rigidbody:
   m_ObjectHideFlags: 0

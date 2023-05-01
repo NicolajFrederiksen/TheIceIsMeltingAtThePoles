@@ -41,6 +41,7 @@ public class MenuHandler : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene("IntroScene");
+        
     }
 
     public void setPoints()

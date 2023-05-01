@@ -11,7 +11,8 @@ public class AudioManager : MonoBehaviour
 
 	public Sound[] sounds;
 
-	void Awake()
+
+    void Awake()
 	{
 		OnOrOff =PlayerPrefs.GetInt("OnOrOff");
 
@@ -34,6 +35,10 @@ public class AudioManager : MonoBehaviour
 
 			s.source.outputAudioMixerGroup = mixerGroup;
 		}
+	}
+	void Start()
+	{
+		Play("MainMusic");
 	}
 
 	public void Play(string sound)

@@ -87,7 +87,7 @@ public class MainCharacter : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         Destroy(this.gameObject);
-        SceneManager.LoadScene("EndScene");
+        SceneManager.LoadScene("DeadScene");
     }
     public void Winning()
     {

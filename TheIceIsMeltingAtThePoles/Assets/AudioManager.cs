@@ -6,13 +6,15 @@ public class AudioManager : MonoBehaviour
 {
 
 	public static AudioManager instance;
-
+	public int OnOrOff;
 	public AudioMixerGroup mixerGroup;
 
 	public Sound[] sounds;
 
 	void Awake()
 	{
+		OnOrOff =PlayerPrefs.GetInt("OnOrOff");
+
 		if (instance != null)
 		{
 			Destroy(gameObject);
@@ -29,23 +31,27 @@ public class AudioManager : MonoBehaviour
 			s.source.clip = s.clip;
 			s.source.loop = s.loop;
 
+
 			s.source.outputAudioMixerGroup = mixerGroup;
 		}
 	}
 
 	public void Play(string sound)
 	{
-		Sound s = Array.Find(sounds, item => item.name == sound);
-		if (s == null)
+		if (OnOrOff != 0)
 		{
-			Debug.LogWarning("Sound: " + name + " not found!");
-			return;
+			Sound s = Array.Find(sounds, item => item.name == sound);
+			if (s == null)
+			{
+				Debug.LogWarning("Sound: " + name + " not found!");
+				return;
+			}
+
+			s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+			s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+
+			s.source.Play();
 		}
-
-		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
-		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-
-		s.source.Play();
 	}
 
 }

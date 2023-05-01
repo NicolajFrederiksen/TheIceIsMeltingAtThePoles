@@ -25,7 +25,7 @@ public class MainCharacter : MonoBehaviour
 
     public void MovingToObject(Vector3 Targetposition)
     {
-        Anim.RopeClimb();
+        //Anim.RopeClimb();
         float TransitionStartTime = Time.time;
         StartCoroutine(MoveParentObject(Targetposition, TransitionStartTime));
         Camera.GetComponent<CameraMovement>().followMC(Targetposition, TransitionStartTime, transitionDuration);
